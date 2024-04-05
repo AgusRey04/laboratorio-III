@@ -8,4 +8,4 @@ Ejercicios de la practica 1:
   - [JavaScript](https://github.com/AgusRey04/laboratorio-III/tree/Js/Practica-1/JavasScript)
 
 Teoria:
-  - [Teoria-Ejercicio-1]([https://github.com/AgusRey04/Practica-React/tree/Teoria-1](https://github.com/AgusRey04/laboratorio-III/tree/Teoria/teoria-1))
+  - [Teoria-Ejercicio-1](https://github.com/AgusRey04/laboratorio-III/tree/Teoria/teoria-1)
