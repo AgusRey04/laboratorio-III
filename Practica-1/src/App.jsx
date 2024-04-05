@@ -1,48 +1,88 @@
-import React from 'react';
-import './index.css';
-import Books from './component/books/Books';
-const App = () => {
-  const books = [
-    {
-      bookTitle: "100 años de soledad",
-      bookAuthor: "Gabriel García Marquez",
-      bookRating: Array(5).fill("*"),
-      pageCount: 410,
-      imageUrl: "https://images.cdn3.buscalibre.com/fit-in/360x360/61/8d/618d227e8967274cd9589a549adff52d.jpg",
-    },
-    {
-      bookTitle: "Asesinato en el Orient Express",
-      bookAuthor: "Agatha Christie",
-      bookRating: Array(4).fill("*"),
-      pageCount: 256,
-      imageUrl: "https://m.media-amazon.com/images/I/71RFyM95qwL._AC_UF1000,1000_QL80_.jpg",
-    },
-    {
-      bookTitle: "Las dos torres",
-      bookAuthor: "J.R.R Tolkien",
-      bookRating: Array(5).fill("*"),
-      pageCount: 352,
-      imageUrl: "https://m.media-amazon.com/images/I/A1y0jd28riL._AC_UF1000,1000_QL80_.jpg",
-    },
-    {
-      bookTitle: "50 sombras de Grey",
-      bookAuthor: "E.L James",
-      bookRating: Array(1).fill("*"),
-      pageCount: 514,
-      imageUrl: "https://prodimage.images-bn.com/pimages/9781728260839_p0_v2_s1200x630.jpg",
-    },
-  ];
-  
+// EJERCICIO 3
+import Beers from './component/beers/Beers'
+import './App.css'
+import Conteo from './component/conteo/Conteo'
+const beers = [
+  {
+      id: 1,
+      beerName: "American",
+      beerStyle: "IPA",
+      price: 3,
+      available: true,
+  },
+  {
+      id: 2,
+      beerName: "Argenta",
+      beerStyle: "IPA",
+      price: 4,
+      available: false,
+  },
+  {
+      id: 3,
+      beerName: "Irish",
+      beerStyle: "Red",
+      price: 4,
+      available: true,
+  },
+  {
+      id: 4,
+      beerName: "Scotish",
+      beerStyle: "Red",
+      price: 3,
+      available: true,
+  },
+  {
+      id: 5,
+      beerName: "DeEssoCiTratta",
+      beerStyle: "APA",
+      price: 3,
+      available: true,
+  },
+  {
+      id: 6,
+      beerName: "Santa APA",
+      beerStyle: "APA",
+      price: 3,
+      available: true,
+  },
+  {
+      id: 7,
+      beerName: "German",
+      beerStyle: "Pilsen",
+      price: 1,
+      available: true,
+  },
+  {
+      id: 8,
+      beerName: "London Porter",
+      beerStyle: "Porter",
+      price: 2,
+      available: false,
+  },
+  {
+      id: 9,
+      beerName: "Scotish ALE",
+      beerStyle: "Red",
+      price: 5,
+      available: false,
+  },
+];
+
+const beersAvailable = beers.filter((beer) => beer.available === true).map((beer)=>(<Beers key={beer.id} beerName = {beer.beerName} beerStyle ={beer.beerStyle} price = {beer.price} available= {beer.available}/>));
+
+function App() {
 
   return (
-    <div>
-      <h2>Books Champion App</h2>
-      {
-      <Books  books={books}
-    />
-  }
-    </div>
-  );
-};
+    <>
+      <div>
+        <h1>CERVEZAS:</h1>
+        <div class='cards'>
+          {beersAvailable}
+        </div>
+        <Conteo beers={beers}/>
+      </div>
+    </>
+  )
+}
 
-export default App;
+export default App
