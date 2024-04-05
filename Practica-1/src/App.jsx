@@ -1,7 +1,7 @@
-// EJERCICIO 1
+// EJERCICIO 3
 import Beers from './component/beers/Beers'
 import './App.css'
-
+import Conteo from './component/conteo/Conteo'
 const beers = [
   {
       id: 1,
@@ -75,16 +75,11 @@ function App() {
   return (
     <>
       <div>
-        <p>Hola</p>
-  
-        {
-          beers.map((beer)=> (<Beers key={beer.id} beerName = {beer.beerName} beerStyle ={beer.beerStyle} price = {beer.price} available= {beer.available}/>))
-        }
-        <p>---------------------------------</p>
-        <p>Beers Filtrada</p>
-        {
-          beersAvailable
-        }
+        <h1>CERVEZAS:</h1>
+        <div class='cards'>
+          {beersAvailable}
+        </div>
+        <Conteo beers={beers}/>
       </div>
     </>
   )

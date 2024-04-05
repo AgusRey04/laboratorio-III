@@ -8,10 +8,10 @@ import context from 'react-bootstrap/esm/AccordionContext';
 
 const Beers = ({ id, beerName, beerStyle, price, available }) => {
     return (
-        <div >
-           <Card style={ {width: '15rem', margin: "10px",display: 'inline-block'}}>
+        <div>
+           <Card style={ {width: '15rem', margin: "10px"}}>
             
-                <div>Name: {beerName}</div>
+                <div >Name: {beerName}</div>
                 <div>Style: {beerStyle}</div>
                 <div>Price: ${price}</div>
                 <div>Available: {available? "Disponible" : "Sin stock"}</div>
