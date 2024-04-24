@@ -7,9 +7,9 @@ Practicas obligatorias :
 Ejercicios de la practica I:
 
   - [Ejer 1](https://github.com/AgusRey04/laboratorio-III/tree/Ejercicios/Practica-1)
-  - [Ejer 2](https://github.com/AgusRey04/laboratorio-III/tree/Ejercicio-2)
-  - [Ejer 3](https://github.com/AgusRey04/laboratorio-III/tree/Ejercicio-3)
-  - [Ejer 4](https://github.com/AgusRey04/laboratorio-III/tree/Ejercicio-4)
+  - [Ejer 2](https://github.com/AgusRey04/laboratorio-III/tree/Ejercicio-2/Practica-1)
+  - [Ejer 3](https://github.com/AgusRey04/laboratorio-III/tree/Ejercicio-3/Practica-1)
+  - [Ejer 4](https://github.com/AgusRey04/laboratorio-III/tree/Ejercicio-4/Practica-1)
   - [JavaScript](https://github.com/AgusRey04/laboratorio-III/tree/Js/Practica-1/JavasScript)
 
 Ejercicios de la practica II:
