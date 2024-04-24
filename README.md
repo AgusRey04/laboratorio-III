@@ -2,7 +2,7 @@
 
 Practicas obligatorias :
   - [Practica-1](https://github.com/AgusRey04/laboratorio-III/tree/mapCodingChallenge)
-  - [Practica-2](https://github.com/AgusRey04/laboratorio-III/tree/Ejercicio-2.1/Practica-2)](https://github.com/AgusRey04/laboratorio-III/tree/Practica-Obligatoria-2/Practica-2)
+  - [Practica-2](https://github.com/AgusRey04/laboratorio-III/tree/Ejercicio-2.1/Practica-2)
 
 Ejercicios de la practica I:
 
