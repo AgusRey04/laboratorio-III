@@ -1,0 +1,10 @@
+.card-app{
+  
+    background-color: rgb(233, 233, 23);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 1ch;
+
+}
