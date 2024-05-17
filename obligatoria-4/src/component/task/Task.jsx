@@ -5,7 +5,7 @@ import { Button } from "react-bootstrap";
 const Task = ({ id, title, description, status 
  }) => {
   
-    const [pending, setPending] = useState(status);
+  const [pending, setPending] = useState(status);
   const navigate = useNavigate();
   const handleClick = () => {
     navigate(`taskList/:id${id}`, {

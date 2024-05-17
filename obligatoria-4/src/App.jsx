@@ -17,14 +17,17 @@ function App() {
         setTasks((prev) => [...prev,taskData])
     }
 
-    const handlerStatusChange =() => {
-      
+    const handlerSearchID =(buscarID) => {
+      const task = tasks.find((task) => task.id === buscarID);
+      task.delete =!task.delete;
+      setTasks((prev) => prev.filter((task) => task.id!== buscarID))
     }  
+   
   const router = createBrowserRouter([  
     {
       path: "/",
       element: (
-        <TaskList tasks={tasks} />
+        <TaskList tasks={tasks} onID={handlerSearchID}/>
       ),
     },
     {
@@ -34,7 +37,7 @@ function App() {
     },
     {
       path: "/newTask",
-      element: <TaskNew onTaskDataSave = {saveTaskDataHandler} onStatus={handlerStatusChange}/>
+      element: <TaskNew onTaskDataSave = {saveTaskDataHandler}  />
     }
     ,
     {

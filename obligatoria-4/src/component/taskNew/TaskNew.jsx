@@ -27,7 +27,8 @@ const TaskNew = ({onTaskDataSave}) => {
     const taskData ={
         title: enteredTitle,
         description: enteredDescription,
-        status : true
+        status : true,
+        delete: false
     }; 
     
     console.log(taskData);

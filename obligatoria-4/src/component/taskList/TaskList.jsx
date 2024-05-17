@@ -3,8 +3,9 @@ import PropTypes from 'prop-types'
 import Task from '../task/Task'
 import { Button } from 'react-bootstrap'
 import { useNavigate } from "react-router-dom";
-const TaskList = ({tasks,onStatus}) => {
+const TaskList = ({tasks,onStatus,onID}) => {
   const navigate = useNavigate();
+
 
   return (
     <>
@@ -12,17 +13,19 @@ const TaskList = ({tasks,onStatus}) => {
       <Button onClick={()=>( navigate("/newTask"))}> Agregar Tarae</Button>
       {
         tasks.map((task) => (
-          <Task
-            key={task.id}
-            id={task.id}
-            title={task.title}
-            description={task.description}
-            status= {task.status}
-            onStatus = {onStatus}
-           />
-        ))
+          <div key={task.id}>
+            <Task
+              id={task.id}
+              title={task.title}
+              description={task.description}
+              status={task.status}
+              onStatus={onStatus}
+            />
+            <Button onClick={() => onID(task.id)}>Acción</Button>
+          </div>
+
+        ) )      
       }
-    
     </>
   )
 }
@@ -30,6 +33,8 @@ const TaskList = ({tasks,onStatus}) => {
 TaskList.propTypes = {
     tasks: PropTypes.array,
     onStatus: PropTypes.func.isRequired,
+    onID: PropTypes.func.isRequired,
+    
   
 }
 
