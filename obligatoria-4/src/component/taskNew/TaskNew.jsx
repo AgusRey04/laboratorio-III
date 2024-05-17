@@ -5,9 +5,9 @@ import {  Button } from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
 import { Card} from "react-bootstrap";
 import PropTypes from "prop-types";
-
+import { useNavigate } from "react-router-dom";
 const TaskNew = ({onTaskDataSave}) => {
-  const [showForm, setShowForm] = useState(false);
+  const navigate = useNavigate();
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredDescription, setEnteredDescription] = useState("");
   
@@ -19,9 +19,7 @@ const TaskNew = ({onTaskDataSave}) => {
     setEnteredDescription(event.target.value);
     console.log(event.target.value);
   };
-  const handleClick = () => {
-    setShowForm(!showForm);
-  };
+ 
 
   const submitTaskHandler = (event) => {
     event.preventDefault();
@@ -37,14 +35,15 @@ const TaskNew = ({onTaskDataSave}) => {
  
     setEnteredDescription("");
     setEnteredTitle("");
+    navigate("/");
     
   };
   return (
     <>
-      <Button onClick={handleClick}> {!showForm?"Agregar Tarea":"Esconder"}</Button>
-      {showForm && (
+  
+      {
         <Card bg="success">
-        <Form className="text-white" onSubmit={submitTaskHandler}>
+        <Form className="text-white" >
         <Form.Group className="mb-3" controlId="taskTitle">
           <Form.Label>Titulo</Form.Label>
           <Form.Control type="text" placeholder="Titulo de la tare"  onChange={handleChangeTitle}
@@ -55,13 +54,13 @@ const TaskNew = ({onTaskDataSave}) => {
           <Form.Control as="textarea"placeholder="Descripcion de la tarea" onChange={handleChangeDescription} value={enteredDescription}/>
         </Form.Group>
       
-        <Button variant="primary" type="submit"  >
+        <Button  onClick={submitTaskHandler}  variant="primary" type="submit"  >
                     Agregar Tarea
                 </Button>
                 </Form>
         </Card>
 
-      )}
+      }
     </>
   );
 };
