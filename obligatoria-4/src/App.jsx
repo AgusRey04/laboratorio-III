@@ -1,6 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import './App.css';
-import TASKS from "./component/list/List";
+import TASKS from "./component/list/List.js";
 import { useState } from "react";
 import TaskNew from "./component/taskNew/TaskNew";
 import TaskDetails from "./component/taskDetails/TaskDetails";
