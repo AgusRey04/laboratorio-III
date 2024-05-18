@@ -1,48 +1,45 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
-const Task = ({ id, title, description, status 
- }) => {
-  
-  const [pending, setPending] = useState(status);
+
+const Task = ({ id, title, status,description, onID, onStatusChange }) => {
   const navigate = useNavigate();
+
   const handleClick = () => {
-    navigate(`taskList/:id${id}`, {
+    navigate(`/taskList/${id}`, {
       state: {
         task: {
           title,
           description,
-          pending,
-        },
+          status,
+        }
       },
-    }); 
+    });
   };
-
 
   const handleStatus = () => {
-    
-    setPending(!pending)
+    onStatusChange(id);
   };
+
   return (
     <div>
-      { pending?<h2>{title}</h2>:<h2><del>{title}</del></h2>}
-       
-      <Button onClick={handleStatus }>
-            {pending?"pendiente":"realizado"}
+      {status ? <h2>{title}</h2> : <h2><del>{title}</del></h2>}
+      <Button onClick={handleStatus}>
+        {status ? "Pendiente" : "Realizado"}
       </Button>
       <Button onClick={handleClick}>Más</Button>
-     
-      
-      
+      <Button onClick={() => onID(id)}>Eliminar</Button>
     </div>
   );
 };
+
 Task.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  id: PropTypes.number,
-  status: PropTypes.bool,
-  onStatus: PropTypes.func
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  status: PropTypes.bool.isRequired,
+  onID: PropTypes.func.isRequired,
+  onStatusChange: PropTypes.func.isRequired,
 };
+
 export default Task;
