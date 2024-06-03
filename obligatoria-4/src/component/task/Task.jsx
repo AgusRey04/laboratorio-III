@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
-const Task = ({ id, title, status,description, onID, onStatusChange }) => {
+const Task = ({ id, title, status, description, onID, onStatusChange }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -12,7 +12,7 @@ const Task = ({ id, title, status,description, onID, onStatusChange }) => {
           title,
           description,
           status,
-        }
+        },
       },
     });
   };
@@ -23,9 +23,15 @@ const Task = ({ id, title, status,description, onID, onStatusChange }) => {
 
   return (
     <div>
-      {status ? <h2>{title}</h2> : <h2><del>{title}</del></h2>}
+      {status ? (
+        <h2>{title}</h2>
+      ) : (
+        <h2>
+          <del>{title}</del>
+        </h2>
+      )}
       <Button onClick={handleStatus}>
-        {status ? "Pendiente" : "Realizado"}
+        {status ? "Marcar como realizada" : "Marcar como pendiente"}
       </Button>
       <Button onClick={handleClick}>Más</Button>
       <Button onClick={() => onID(id)}>Eliminar</Button>

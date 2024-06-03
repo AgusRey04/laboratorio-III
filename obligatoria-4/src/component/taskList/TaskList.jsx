@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
-import Task from '../task/Task';
-import { Button } from 'react-bootstrap';
+import PropTypes from "prop-types";
+import Task from "../task/Task";
+import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 const TaskList = ({ tasks, onID, onStatusChange }) => {
@@ -9,6 +9,8 @@ const TaskList = ({ tasks, onID, onStatusChange }) => {
   return (
     <>
       <h1>GESTION DE TAREAS</h1>
+      {tasks.length == 0 && <p>Sin tareas</p>}
+
       <Button onClick={() => navigate("/newTask")}>Agregar Tarea</Button>
       {tasks.map((task) => (
         <div key={task.id}>

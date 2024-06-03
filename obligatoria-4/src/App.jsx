@@ -1,10 +1,11 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import './App.css';
+import "./App.css";
 import TASKS from "./component/list/List.js";
 import { useState } from "react";
 import TaskNew from "./component/taskNew/TaskNew";
 import TaskDetails from "./component/taskDetails/TaskDetails";
 import TaskList from "./component/taskList/TaskList";
+import ErrorPage from "./component/errorPage/ErrorPage.jsx";
 
 function App() {
   const [tasks, setTasks] = useState(TASKS);
@@ -22,7 +23,11 @@ function App() {
   };
 
   const handlerTaskStatus = (taskId) => {
-    setTasks((prev) =>prev.map((task) =>task.id === taskId ? { ...task, status: !task.status } : task));
+    setTasks((prev) =>
+      prev.map((task) =>
+        task.id === taskId ? { ...task, status: !task.status } : task
+      )
+    );
   };
 
   const router = createBrowserRouter([
@@ -38,7 +43,7 @@ function App() {
     },
     {
       path: "taskList/:id",
-      element: <TaskDetails  />,
+      element: <TaskDetails />,
     },
     {
       path: "/newTask",
@@ -46,7 +51,7 @@ function App() {
     },
     {
       path: "*",
-      element: <p>⚠️⚠️⚠️</p>,
+      element: <ErrorPage />,
     },
   ]);
 
